@@ -17,19 +17,19 @@ User.init(
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
-      autoIncrement: true,
+      autoIncrement: true
     },
     username: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: false
     },
     dogname: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: false
     },
     dogbreed: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: false
     },
     email: {
       type: DataTypes.STRING,
@@ -37,15 +37,15 @@ User.init(
       unique: true,
       validate: {
         isEmail: true,
-      },
+      }
     },
     password: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        len: [4],
-      },
-    },
+        len: [4]
+      }
+    }
   },
   {
     hooks: {
@@ -61,7 +61,7 @@ User.init(
           10
         );
         return updatedUserData;
-      },
+      }
     },
     sequelize,
     timestamps: false,
