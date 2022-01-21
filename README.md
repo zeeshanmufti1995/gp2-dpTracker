@@ -4,7 +4,6 @@
 * Michael Bahl (https://mbahl1670.github.io/ch2-portfolio-mjb/)
 * Christopher Speltz
 * Zeeshan Mufti
-* 
   
 
 ## Built With
