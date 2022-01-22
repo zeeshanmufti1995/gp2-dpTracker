@@ -54,7 +54,7 @@ Park.init(
     park_name: {
       type: DataTypes.STRING,
       allowNull: false,
-    },
+    }
   },
   {
     sequelize,
