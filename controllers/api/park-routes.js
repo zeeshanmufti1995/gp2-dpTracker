@@ -34,8 +34,7 @@ router.get('/:id', (req,res) => {
 // POST create a Park route /api/parks
 router.post('/', (req,res) => {
     Park.create({
-        park_name: req.body.park_name,
-        user_id: req.body.user_id
+        park_name: req.body.park_name
     })
     .then(dbCommentData => res.json(dbCommentData))
     .catch(err => {
