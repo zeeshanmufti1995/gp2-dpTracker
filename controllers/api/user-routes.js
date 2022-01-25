@@ -71,7 +71,7 @@ router.post('/login', (req, res) => {
             res.status(400).json({ message: 'No user with that email address' });
             return;
         }
-        
+        console.log("we are here", req.body.email)
         const validPassword = dbUserData.checkPassword(req.body.password);
         if (!validPassword) {
             res.status(400).json({ message: 'Incorrect password' });
@@ -79,12 +79,12 @@ router.post('/login', (req, res) => {
         }
 
         req.session.save(() => {
-            res.session.user_id = dbUserData.id;
-            res.session.username = dbUserData.username;
-            res.session.dogbreed = dbUserData.dogbreed;
-            res.session.dogname = dbUserData.dogname;
-            res.session.loggedIn = true;
-            
+            req.session.user_id = dbUserData.id;
+            req.session.username = dbUserData.username;
+            req.session.dogbreed = dbUserData.dogbreed;
+            req.session.dogname = dbUserData.dogname;
+            req.session.loggedIn = true;
+            console.log("we are here again", dbUserData.id)
             res.json({ user: dbUserData, message: 'You are now logged in!' });
         });
         

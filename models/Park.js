@@ -13,6 +13,7 @@ class Park extends Model {
         },
         attributes: [
           "id",
+          "park_name",
           "created_at",
           [sequelize.literal("(SELECT COUNT(*) FROM vote WHERE park.id = vote.park_id)"),"vote_count",],
         ],
