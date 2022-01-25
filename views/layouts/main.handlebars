@@ -34,10 +34,13 @@
                     <div class="collapse navbar-collapse" id="navbar-collapse-main">
                         <ul class="nav navbar-nav navbar-right">
                             <li><a href="/">Home</a></li>
-                            <li><a href="#">Dashboard </a></li>
-                            <li><a href="#">Profile</a></li>
-                            <li><a href="/login">Login</a></li>
+                             {{#if loggedIn}}
+                            <li><a href="/dashboard">Dashboard </a></li>
                             <li><a href="#">logout</a></li>
+                                          {{else}}
+                            <li><a href="/login">Login</a></li>
+                           
+                            {{/if}}
                         </ul>
                     </div>      
                 </div>
@@ -48,6 +51,7 @@
     <div id= "home">
         <div class="landing-text">
             <h1>Welcome to the Dog park</h1>
+
         </div>
     </div> 
 
