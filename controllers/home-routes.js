@@ -52,7 +52,9 @@ router.get('/park/:id', (req,res) => {
         ]
     })
     .then(dbParkData => {
-        const park = dbParkData.map(park => park.get({ plain:true }));
+        // const park = dbParkData.map(park => park.get({ plain:true }));
+        
+        const park = dbParkData.get({ plain: true });
         console.log(park);
         res.render('single-park', { park
             // park,
@@ -65,5 +67,8 @@ router.get('/park/:id', (req,res) => {
     });
 });
 
+// router.get('/', (req, res) => {
+//     res.render('homepage')
+// })
 
 module.exports = router;
