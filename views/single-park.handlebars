@@ -1,15 +1,19 @@
-<h2>{{park.park_name}}</h2>
-
-
-
-{{!-- <div>
-    <article class="card">
-        <div class="post border">
-            <h2>{{park_name}}</h2>
+<div>
+    <article class="">
+        <div class="">
+            <h2>{{park.park_name}}</h2>
+            <button type="button" class="upvote-btn">Vote for the dog park</button>
         </div>
 
+        <h3>Comments about the park</h3>
+        <form class="comment-form">
+            <button type="submit">Add Comment</button>
+            <div>
+                <textarea name="comment-text"></textarea>
+            </div>
+        </form>
         <div class="comments">
-            {{#each comments as |single-comment|}}
+            {{#each park.comments as |single-comment|}}
             <div class="comment">
                 {{single-comment.comment_text}}
                 :  comment made by {{single-comment.user.username}} @ {{format_date single-comment.created_at}}
@@ -18,15 +22,9 @@
         </div>
     </article>
 
-    <form class="comment-form">
-        <div>
-            <textarea name="comment-text"></textarea>
-            <button type="submit">Add Comment</button>
-        </div>
-    </form>
 
 </div>
 
-{{#if loggedIn}}
+
 <script src="/javascript/comment.js"></script>
-{{/if}} --}}
+<script src="/javascript/upvote.js"></script>
