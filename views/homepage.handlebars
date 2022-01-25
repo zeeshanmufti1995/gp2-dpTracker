@@ -1,0 +1,14 @@
+<h2>Top 10 dogparks of the Minneapolis Area</h2>
+<h3>Log in to Vote on a Park or view comments about a park!</h3>
+<ol class="">
+    {{#each park as |park|}}
+    <li>
+        <article class="park">
+            <div class="title">
+                <a href="/park/{{id}}">{{park_name}}</a>
+            </div>
+        </article>
+    </li>
+    {{/each}}
+</ol>
+

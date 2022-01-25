@@ -78,7 +78,16 @@ router.post('/login', (req, res) => {
             return;
         }
 
-        res.json({ user: dbUserData, message: 'You are now logged in!' });
+        req.session.save(() => {
+            res.session.user_id = dbUserData.id;
+            res.session.username = dbUserData.username;
+            res.session.dogbreed = dbUserData.dogbreed;
+            res.session.dogname = dbUserData.dogname;
+            res.session.loggedIn = true;
+            
+            res.json({ user: dbUserData, message: 'You are now logged in!' });
+        });
+        
     });
 });
 
