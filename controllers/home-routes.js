@@ -54,7 +54,7 @@ router.get('/park/:id', withAuth, (req,res) => {
                 attributes: ['comment_text', 'park_id', 'user_id', 'created_at'],
                 include: {
                     model: User,
-                    attributes: ['username']
+                    attributes: ['username', 'dogbreed']
                 }
             }
         ]
