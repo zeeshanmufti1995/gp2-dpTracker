@@ -53,7 +53,17 @@ router.post('/', (req,res) => {
         dogname: req.body.dogname,
         dogbreed: req.body.dogbreed
     })
-    .then(dbUserData => res.json(dbUserData))
+    .then(dbUserData => {
+        req.session.save(() => {
+            req.session.user_id = dbUserData.id;
+            req.session.username = dbUserData.username;
+            req.session.dogbreed = dbUserData.dogbreed;
+            req.session.dogname = dbUserData.dogname;
+            req.session.loggedIn = true;
+            
+            res.json(dbUserData);
+        });
+    })
     .catch(err => {
         console.log(err);
         res.status(500).json(err);
