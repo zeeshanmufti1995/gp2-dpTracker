@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const { User, Park, Comment } = require('../../models');
+const withAuth = require('../../utils/auth');
 
 // GET ALL users route /api/users
 router.get('/', (req,res) => {
@@ -89,6 +90,16 @@ router.post('/login', (req, res) => {
         });
         
     });
+});
+
+router.post('/logout',(req, res) => {
+    if (req.session.loggedIn) {
+        req.session.destroy(() => {
+            res.status(204).end();
+        });
+    } else {
+        res.status(404).end();
+    }
 });
 
 // PUT change User info route /api/users/:id

@@ -21,9 +21,9 @@ router.get('/', (req, res) => {
     })
     .then(dbParkData => {
         const park = dbParkData.map(park => park.get({ plain:true }));
-        res.render('homepage', { park
-            // park,
-            // loggedIn
+        res.render('homepage', { 
+            park,
+            loggedIn: req.session.loggedIn
         });
     })
     .catch(err => {
@@ -40,7 +40,7 @@ router.get('/login', (req, res) => {
     res.render('login');
 });
 
-router.get('/park/:id', (req,res) => {
+router.get('/park/:id', withAuth, (req,res) => {
     Park.findOne({
         where: {
             id: req.params.id
@@ -64,9 +64,9 @@ router.get('/park/:id', (req,res) => {
         
         const park = dbParkData.get({ plain: true });
         console.log(park);
-        res.render('single-park', { park
-            // park,
-            // loggedIn
+        res.render('single-park', { 
+            park,
+            loggedIn: req.session.loggedIn
         });
     })
     .catch(err => {
