@@ -34,6 +34,11 @@ app.use(session(sess));
 // // turn on routes
 app.use(routes);
 
+// helpers for using handlebars-moment || Our NEW technology"
+var Handlebars = require("handlebars");
+var MomentHandler = require("handlebars.moment");
+MomentHandler.registerHelpers(Handlebars);
+
 // turn on connection to db and server
 sequelize.sync({ force: false}).then(() => {
     app.listen(PORT, () => console.log('Now listening'));
