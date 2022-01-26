@@ -1,8 +1,31 @@
-  <h1>Hello {{username}} </h1>
-  <div class="user-dashboard" >
-    <h3> Username: {{user.username}} </h3>
-    <h3> Dog Name: {{user.dogname}} </h3>
-    <h3> Dog Breed: {{user.dogbreed}} </h3>
-    <h3> Email: {{user.email}} </h3>
+<a href="/"> &larr; Back to main Page</a>
+<h1>Hello {{user.username}} </h1>
+<div class="user-dashboard" >
+  <h3> Dog Name: {{user.dogname}} </h3>
+  <h3> Dog Breed: {{user.dogbreed}} </h3>
+  <h3> Email: {{user.email}} </h3>
+</div>
+
+{{#if user.voted_parks.length}}
+<h4>Parks you have voted for</h4>
+<ul>
+  {{#each user.voted_parks as |voted_parks|}}
+  <li>{{voted_parks.park_name}}</li>      
+  {{/each}}
+</ul>
+{{/if}}
+
+{{#if user.comments.length}}
+<div class="comments">
+  <h4>Comments made by you:</h4>
+  {{#each user.comments as |single-comment|}}
+  <div class="comment">
+    <h5>Park: {{single-comment.park.park_name}}</h5>
+    
+    <p>{{single-comment.comment_text}}</p>
   </div>
+  {{/each}}
+</div>
+{{/if}}
+
 
