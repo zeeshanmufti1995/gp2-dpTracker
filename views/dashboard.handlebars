@@ -4,7 +4,7 @@
   <h3> Dog Name: {{user.dogname}} </h3>
   <div>
     <h3> Dog Breed: <span id="dogBreed">{{user.dogbreed}}</span> </h3>
-    <button type="button" id="dogPic" class="dogPic">Get a Picture of Your Dog's Breed</button>
+    {{!-- <button type="button" id="dogPic" class="dogPic">Get a Picture of Your Dog's Breed</button> --}}
   </div>
   <h3> Email: {{user.email}} </h3>
 </div>
@@ -26,9 +26,11 @@
     <h5>Park: {{single-comment.park.park_name}}</h5>
     
     <p>{{single-comment.comment_text}}</p>
+    {{!-- <p>{{single-comment.created_at}}</p> --}}
+    <p>Comment made on: {{moment single-comment.created_at format="MM/DD/YYYY" }}</p>
   </div>
   {{/each}}
 </div>
 {{/if}}
 
-<script src="/javascript/addDogPic.js"></script>
+{{!-- <script src="/javascript/addDogPic.js"></script> --}}

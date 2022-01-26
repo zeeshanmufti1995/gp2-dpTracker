@@ -17,7 +17,7 @@
             {{#each park.comments as |single-comment|}}
             <div class="comment">
                 {{single-comment.comment_text}}
-                :  comment made by {{single-comment.user.username}} @ {{format_date single-comment.created_at}}
+                :  comment made by {{single-comment.user.username}} on {{moment single-comment.created_at format="MM/DD/YYYY"}}
             </div>
             {{/each}}
         </div>
