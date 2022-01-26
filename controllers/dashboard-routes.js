@@ -4,6 +4,19 @@ const { Park, User, Comment, Vote } = require('../models');
 const withAuth = require('../utils/auth');
 
 // get all posts for dashboard
+// router.get('/', (req,res) => {
+//   User.findAll({
+//       attributes: { exclude: ['password'] }
+//   })
+//   console.log("Hello world1")
+//   .then(dbUserData => res.json(dbUserData))
+//   .catch(err => {
+//     console.log("Hello world2")
+//       console.log(err);
+//       res.status(500).json(err);
+//   });
+//   console.log("Hello world3")
+// });
 router.get('/', withAuth, (req, res) => {
   console.log(req.session);
   console.log('======================');
