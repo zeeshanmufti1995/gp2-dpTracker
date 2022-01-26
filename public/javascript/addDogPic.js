@@ -4,6 +4,7 @@ async function addDogPic(event) {
     const dogBreed = document.querySelector('#dogBreed').innerHTML;
 
     var apiCall = "https://dog.ceo/api/breed/" + dogBreed +"/images/random"
+    console.log(dogBreed, apiCall);
     
     await fetch(apiCall).then(function (response) {
         if(response.ok) {

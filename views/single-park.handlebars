@@ -18,14 +18,6 @@
                 {{single-comment.comment_text}}
                 :  comment made by {{single-comment.user.username}} @ {{format_date single-comment.created_at}}
             </div>
-            {{!-- <button type="button" id="dogPic">Dog Breed = <span id="breed">{{single-comment.user.dogbreed}}</span></button> --}}
-                <form class="">
-                    <div>
-                        {{!-- <h2 name="dog-breed" type="text" value="{{single-comment.user.dogbreed}}">{{single-comment.user.dogbreed}}</h2> --}}
-                        <h2 id="dogBreed">{{single-comment.user.dogbreed}}</h2>
-                        <button type="button" id="dogPic" class="dogPic">Dog Breed</button>
-                    </div>
-                </form>
             {{/each}}
         </div>
     </article>

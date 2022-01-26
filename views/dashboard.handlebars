@@ -2,7 +2,10 @@
 <h1>Hello {{user.username}} </h1>
 <div class="user-dashboard" >
   <h3> Dog Name: {{user.dogname}} </h3>
-  <h3> Dog Breed: {{user.dogbreed}} </h3>
+  <div>
+    <h3> Dog Breed: <span id="dogBreed">{{user.dogbreed}}</span> </h3>
+    <button type="button" id="dogPic" class="dogPic">Get a Picture of Your Dog's Breed</button>
+  </div>
   <h3> Email: {{user.email}} </h3>
 </div>
 
@@ -28,4 +31,4 @@
 </div>
 {{/if}}
 
-
+<script src="/javascript/addDogPic.js"></script>
