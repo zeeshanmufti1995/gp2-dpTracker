@@ -6,6 +6,15 @@ const Park = require('./Park');
 
 // create associations
 
+User.hasMany(Park, {
+  foreignKey: 'user_id'
+});
+
+Park.belongsTo(User, {
+  foreignKey: 'user_id',
+  onDelete: 'SET NULL'
+});
+
 User.belongsToMany(Park, {
   through: Vote,
   as: 'voted_parks',
