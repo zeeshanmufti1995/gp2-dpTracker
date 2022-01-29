@@ -3,7 +3,7 @@
 ## Team Members
 * Michael Bahl (https://mbahl1670.github.io/ch2-portfolio-mjb/)
 * Christopher Speltz
-* Zeeshan Mufti
+* Zeeshan Mufti (https://zeeshanmufti1995.github.io/My_Portfolio/)
   
 
 ## Built With
